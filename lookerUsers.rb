@@ -1,5 +1,3 @@
-
-
 require 'uri'
 require 'net/http'
 require 'json'
@@ -7,10 +5,11 @@ require 'json'
 ##get auth code
 
 #replace with your accurate client id and secret
+#replace domain with actual domain 
 def auth_looker
   client_id= 'ID GOES HERE'
   client_secret= 'SECRET GOES HERE'
-uri = URI.parse("https://procore.looker.com:19999/login")
+uri = URI.parse("https://domain.looker.com:19999/login")
 request = Net::HTTP::Post.new(uri)
 
 request.body = "client_id=#{client_id}&client_secret=#{client_secret}"
@@ -30,8 +29,8 @@ end
 auth_looker()
 
 #get all users and output email and current status
-
-url = URI("https://procore.looker.com:19999/api/3.0/users")
+#replace domain with actual domain 
+url = URI("https://domain.looker.com:19999/api/3.0/users")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
