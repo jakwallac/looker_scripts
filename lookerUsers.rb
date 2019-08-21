@@ -29,6 +29,7 @@ end
 
 auth_looker()
 
+#get all users and output email and current status
 
 url = URI("https://procore.looker.com:19999/api/3.0/users")
 
